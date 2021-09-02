@@ -3,28 +3,26 @@ import logo from './logo.svg';
 import './App.css';
 
 import PersonCard from './components/MyNewComponent';
+var peopleArr = [
+  {"firstName":"Jane", "lastName":"Doe", "age":45, "hairColor":"Black"},
+  {"firstName":"John", "lastName":"Smith", "age":88, "hairColor":"Brown"},
+  {"firstName":"Millard", "lastName":"Fillmore", "age":50, "hairColor":"Brown"},
+  {"firstName":"Maria", "lastName":"Smith", "age":62, "hairColor":"Brown"},
+]
 
 function App() {
   return (
     <div className="App">
-        <PersonCard class="h1" someText={"Doe, Jane"}/>
-        <PersonCard someText={"Age: 45"}/>
-        <PersonCard someText={"Hair Color: Black"}/>
-        <br>
-        </br>
-        <PersonCard someText={"Smith, John"}/>
-        <PersonCard someText={"Age: 88"}/>
-        <PersonCard someText={"Hair Color: Brown"}/>
-        <br>
-        </br>
-        <PersonCard someText={"Fillmore, Millard"}/>
-        <PersonCard someText={"Age: 50"}/>
-        <PersonCard someText={"Hair Color: Brown"}/>
-        <br>
-        </br>
-        <PersonCard someText={"Smith, Maria"}/>
-        <PersonCard someText={"Age: 62"}/>
-        <PersonCard someText={"Hair Color: Brown"}/>
+        {/* <PersonCard firstName={"Jane"} lastName={"Doe"} age={45} hairColor={"Black"}/>
+        <PersonCard firstName={"Smith"} lastName={"John"} age={88} hairColor={"Brown"}/>
+        <PersonCard firstName={"Fillmore"} lastName={"Millard"} age={50} hairColor={"Brown"}/>
+        <PersonCard firstName={"Smith"} lastName={"Maria"} age={62} hairColor={"Brown"}/> */}
+
+        {peopleArr.map(person => {
+          return <PersonCard firstName ={person.firstName} lastName ={person.lastName} age = {person.age} hairColor={person.hairColor}/>
+        })
+        
+        }
 
     </div>
 );
